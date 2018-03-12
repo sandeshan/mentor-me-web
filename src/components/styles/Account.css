@@ -1,0 +1,7 @@
+.full-width-btn {
+    width: 100%;
+}
+
+.avatar-uploader>.ant-upload img {
+    width: 128px !important;
+}

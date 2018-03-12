@@ -1,0 +1,26 @@
+.full-width-btn {
+    width: 100%;
+}
+
+.sign-up-title {
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+@media screen and (min-width: 769px) {
+    .sign-up-div {
+        width: 45%;
+        margin: auto;
+    }
+}
+
+.avatar-uploader >.ant-upload {
+    width: 128px !important;
+    height: 128px !important;
+}
+
+.avatar-uploader>.ant-upload img {
+    width: 128px !important;
+}

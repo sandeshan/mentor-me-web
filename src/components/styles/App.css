@@ -1,0 +1,19 @@
+.header-logo {
+  margin-top: 0.7em;
+  margin-right: 0.7em;
+  float: left;
+}
+
+#root {
+      height: 100%;
+      width: 100%;
+}
+
+.layout.ant-layout {
+  height: 100%;
+  background: none;
+}
+
+.ant-layout-footer {
+  background: none;
+}
