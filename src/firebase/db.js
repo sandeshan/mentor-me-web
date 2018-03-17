@@ -42,8 +42,12 @@ export const getClasses = (uid) =>
 export const getCategories = () =>
     db.ref('categories');
 
-export const doCreateClass = (teacherID, category, title, summary, description, picture, location, createdTime) =>
+export const doCreateClass = (teacherID, category, title, summary, description, picture, placeID, address, createdTime) =>
     db.ref('classes').push({
-        teacherID, category, title, summary, description, picture, location, createdTime,
+        teacherID, category, title, summary, description, picture, createdTime,
+        location: {
+            placeID,
+            address
+        },
         interested: []
     });

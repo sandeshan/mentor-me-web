@@ -14,3 +14,8 @@ Website built using React ([create-react-app](https://github.com/facebook/create
   * Integrated Firebase for Authentication, Real-time Database and Storage.
   * Add Class and Teaching history available.
   * No filters added yet for search in 'Learn'. Shows all classes.
+
+- **0.1.1**
+  * NEW: Added API to fetch Random Quote displayed on page footer.
+  * Update: Classes List now shows location with clickable Google Maps link.
+  * Update: Display user's e-mail id in 'Update Details'

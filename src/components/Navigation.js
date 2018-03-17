@@ -8,7 +8,6 @@ import { Popover } from 'antd';
 
 import { auth, db } from '../firebase';
 
-import SignOutButton from './Account/SignOut';
 import * as routes from '../constants/routes';
 
 const Navigation = ({ authUser }) =>

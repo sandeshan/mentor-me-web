@@ -196,6 +196,16 @@ class UpdateDetailsForm extends Component {
                 </FormItem>
                 <FormItem
                     {...formItemLayout}
+                    label="E-mail ID">
+                    {getFieldDecorator('email', {
+                        initialValue: this.state.currentUser ? this.state.currentUser.email : '',
+                        rules: [{ required: true, message: 'Please input your full name!', whitespace: true }],
+                    })(
+                        <Input disabled placeholder="Your e-mail id" />
+                    )}
+                </FormItem>
+                <FormItem
+                    {...formItemLayout}
                     label="Full Name">
                     {getFieldDecorator('fullName', {
                         initialValue: this.state.currentUser ? this.state.currentUser.fullName : '',

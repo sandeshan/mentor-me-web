@@ -1,6 +1,6 @@
 {
   "name": "mentor-me-web",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
     "antd": "^3.2.3",
@@ -13,7 +13,8 @@
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1",
     "recompose": "^0.26.0",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "unirest": "^0.5.1"
   },
   "scripts": {
     "start": "react-scripts start",

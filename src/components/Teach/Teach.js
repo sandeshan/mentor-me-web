@@ -46,11 +46,15 @@ class Teach extends Component {
     }
 
     classAdded = () => {
-
         this.setState({
             activeTab: "1"
         });
+    }
 
+    tabChange = (key) => {
+        this.setState({
+            activeTab: key
+        });
     }
 
     render() {
@@ -58,7 +62,7 @@ class Teach extends Component {
 
         return (
             <div>
-                <Tabs defaultActiveKey={this.state.activeTab}>
+                <Tabs defaultActiveKey="1" activeKey={this.state.activeTab} onTabClick={this.tabChange}>
                     <TabPane tab={<span><Icon type="user" />Your Classes</span>} key="1">
                         <h1>My Teaching History</h1>
                         {!!classes && <ClassesList classes={classes} />}                        

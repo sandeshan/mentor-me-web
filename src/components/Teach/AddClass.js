@@ -78,8 +78,10 @@ class AddClassForm extends Component {
             if (!err) {
                 // Add new class
                 let createdTime = new Date();
+                let placeID = values.location.split('|')[0];
+                let address = values.location.split('|')[1];                
                 
-                db.doCreateClass(this.props.authUser.uid, values.category, values.title, values.summary, values.description, this.state.uploadedImageURL, values.location, createdTime)
+                db.doCreateClass(this.props.authUser.uid, values.category, values.title, values.summary, values.description, this.state.uploadedImageURL, placeID, address, createdTime)
                     .then(() => {
                         this.setState(() => ({ ...INITIAL_STATE }));
                         message.success('Class Added!');
@@ -149,7 +151,8 @@ class AddClassForm extends Component {
         const { placesResults } = this.state;
 
         const children = placesResults.map((place) => {
-            return <Option key={place.place_id}>{place.description}</Option>;
+            let key = place.place_id + "|" + place.description
+            return <Option key={key}>{place.description}</Option>;
         });
 
         const uploadButton = (

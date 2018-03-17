@@ -17,7 +17,7 @@ class ClassesList extends Component {
         }
     }
 
-    componentWillReceiveProps(newProps) {
+    componentWillReceiveProps = (newProps) => {
         this.setState({
             pagination: {
                 ...this.state.pagination,
@@ -30,7 +30,7 @@ class ClassesList extends Component {
 
         this.setState({ 
             pagination: { 
-                ...this.state.pagination, 
+                ...this.state.pagination,
                 current: pageNum
             }});
 
@@ -50,17 +50,28 @@ class ClassesList extends Component {
                 href: '#',
                 title: value.title,
                 avatar: value.picture,
+                address: value.location.address,
                 description: value.summary,
                 content: value.description,
             });
         });
 
-        const IconText = ({ type, text }) => (
-            <span>
-                <Icon type={type} style={{ marginRight: 8 }} />
-                {text}
-            </span>
-        );
+        const IconText = ({ type, text, detail }) => {
+
+            var iconText;
+
+            if (detail === 'location')  {
+                iconText = <a href={`https://www.google.com/maps/?q=${text}`} target="_blank">{text}</a>
+            } else 
+                iconText = text
+
+            return (
+                <span>
+                    <Icon type={type} style={{ marginRight: 8 }} />
+                    {iconText}
+                </span>
+            )
+        }
 
         return (
             <List
@@ -71,7 +82,8 @@ class ClassesList extends Component {
                 renderItem={item => (
                     <List.Item
                         key={item.title}
-                        actions={[<IconText type="plus-circle-o" text="View Details" />]}
+                        actions={[<IconText type="plus-circle-o" text="View Details" />,
+                            <IconText type="environment-o" text={item.address} detail='location' />]}
                         extra={<img width={272} alt="logo" src={item.avatar} />}
                     >                        
                         <List.Item.Meta
