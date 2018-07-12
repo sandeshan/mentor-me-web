@@ -1,9 +1,15 @@
 {
   "name": "mentor-me-web",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
+  "author": {
+    "name": "Sandesh Naik",
+    "email": "sandeshan@gmail.com"
+  },
+  "homepage": "http://sandeshan.github.io/mentor-me",
   "dependencies": {
     "antd": "^3.2.3",
+    "axios": "^0.18.0",
     "firebase": "^4.10.1",
     "lodash": "^4.17.5",
     "prop-types": "^15.6.1",
